@@ -12,7 +12,7 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    socket.on("viesti", (message) => {
+    socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
     });
   }, []);
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <MessageBox messages={messages} />
-      <MessageForm />
+      <MessageForm socket={socket} />
     </div>
   );
 }

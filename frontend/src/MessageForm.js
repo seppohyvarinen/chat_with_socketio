@@ -1,9 +1,21 @@
-const MessageForm = () => {
+import { useState } from "react";
+
+const MessageForm = ({ socket }) => {
+  const [message, setMessage] = useState("");
+  const submit = (event) => {
+    event.preventDefault();
+    socket.emit("message", message);
+    setMessage("");
+  };
   return (
-    <form>
+    <form onSubmit={submit}>
       <label>
-        Enter your name:
-        <input type="text" />
+        Send Message
+        <input
+          type="text"
+          onChange={(e) => setMessage(e.currentTarget.value)}
+          value={message}
+        />
       </label>
     </form>
   );

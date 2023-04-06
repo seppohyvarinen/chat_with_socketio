@@ -12,8 +12,12 @@ app.use(cors());
 
 const io = socketio(server);
 
-io.on("connection", (socket) => {
-  socket.emit("viesti", "Welcome to the chat!");
+io.on("connection", (client) => {
+  io.emit("message", "Welcome to the chat!");
+
+  client.on("message", (message) => {
+    io.emit("message", message);
+  });
 });
 
 server.listen(PORT, () => console.log("Server running on port: " + PORT));
