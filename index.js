@@ -24,7 +24,11 @@ io.on("connection", (client) => {
     });
   });
   client.on("username", (userName) => {
-    io.emit("message", "Welcome to the chat " + userName);
+    io.emit("message", {
+      text: "Welcome to the chat " + userName,
+      date: new Date().toISOString(),
+      user: "Server",
+    });
 
     const user = {
       name: userName,

@@ -17,6 +17,30 @@
   border-radius: 10px;
 }
 
+.message {
+  display: grid;
+  grid-template-areas:
+    "messagedata"
+    "messagetext";
+}
+
+.messagedata {
+  grid-area: messagedata;
+  justify-self: start;
+}
+
+.messagetext {
+  grid-area: messagetext;
+  display: block;
+  width: 300px;
+  min-height: 20px;
+  background-color: rgb(255, 250, 254);
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
 .usernamebox {
   width: 400px;
   height: 200px;
