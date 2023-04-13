@@ -12,11 +12,25 @@ app.use(cors());
 
 const io = socketio(server);
 
-io.on("connection", (client) => {
-  io.emit("message", "Welcome to the chat!");
+let users = [];
 
+io.on("connection", (client) => {
   client.on("message", (message) => {
-    io.emit("message", message);
+    let u = users.find((o) => o.id === client.id);
+    io.emit("message", {
+      text: message,
+      date: new Date().toISOString(),
+      user: u.name,
+    });
+  });
+  client.on("username", (userName) => {
+    io.emit("message", "Welcome to the chat " + userName);
+
+    const user = {
+      name: userName,
+      id: client.id,
+    };
+    users.push(user);
   });
 });
 

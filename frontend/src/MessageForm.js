@@ -16,6 +16,7 @@ const MessageForm = ({ socket }) => {
           onChange={(e) => setMessage(e.currentTarget.value)}
           value={message}
         />
+        <button>Start chat</button>
       </label>
     </form>
   );

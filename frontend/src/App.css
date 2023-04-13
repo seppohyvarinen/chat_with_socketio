@@ -1,13 +1,61 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(0deg, #f9e4f9 0%, #e4fafd 100%);
+  height: 100vh;
 }
 
 .messagebox {
   background-color: #f3daf3;
-  background-image: linear-gradient(0deg, #f9e4f9 0%, #e4fafd 100%);
+  background-image: linear-gradient(0deg, #f3aef3 0%, #50e5f8 100%);
   width: 600px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: rgba(223, 5, 183, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 10px -8px;
   padding: 20px;
+  border-radius: 10px;
+}
+
+.usernamebox {
+  width: 400px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding: 40px;
+  background-color: #f3daf3;
+  display: grid;
+  place-items: center;
+  box-shadow: rgba(223, 5, 183, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 10px -8px;
+}
+.usernamebox input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #dc3eff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: rgba(223, 5, 183, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 10px -8px;
+}
+
+.usernamebox input[type="submit"] {
+  width: 60%;
+  background-color: #3dc0d1;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px 0;
+
+  border-radius: 22px;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(229, 59, 195, 0.3) 0px 8px 16px -8px;
+}
+
+.usernamebox input[type="submit"]:hover {
+  background-color: #259cac;
 }

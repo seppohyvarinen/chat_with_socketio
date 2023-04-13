@@ -1,26 +1,24 @@
 import "./App.css";
-import io from "socket.io-client";
-import { useEffect, useState } from "react";
-import MessageBox from "./MessageBox";
-import MessageForm from "./MessageForm";
+import { useState } from "react";
 
-const socket = io("/", {
-  transports: ["websocket", "polling"],
-});
+import Chat from "./Chat";
+import Username from "./Username";
 
 function App() {
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    socket.on("message", (message) => {
-      setMessages((messages) => [...messages, message]);
-    });
-  }, []);
+  const [startChat, setStartChat] = useState(false);
+  const [userName, setUserName] = useState("");
 
   return (
     <div className="App">
-      <MessageBox messages={messages} />
-      <MessageForm socket={socket} />
+      {startChat ? (
+        <Chat userName={userName} />
+      ) : (
+        <Username
+          setStartChat={setStartChat}
+          userName={userName}
+          setUserName={setUserName}
+        />
+      )}
     </div>
   );
 }
