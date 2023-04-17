@@ -17,10 +17,13 @@ let users = [];
 io.on("connection", (client) => {
   client.on("message", (message) => {
     let u = users.find((o) => o.id === client.id);
+    console.log(client.id);
+
     io.emit("message", {
       text: message,
       date: new Date().toISOString(),
       user: u.name,
+      id: client.id,
     });
   });
   client.on("username", (userName) => {

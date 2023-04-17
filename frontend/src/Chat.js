@@ -10,18 +10,22 @@ const socket = io("/", {
 
 const Chat = ({ userName }) => {
   const [messages, setMessages] = useState([]);
+  const [clientId, setClientId] = useState(socket.id);
 
   useEffect(() => {
     socket.emit("username", userName);
 
     socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
+      console.log(clientId);
     });
   }, []);
-
+  useEffect(() => {
+    console.log(messages);
+  }, [messages]);
   return (
     <div className="App">
-      <MessageBox messages={messages} />
+      <MessageBox messages={messages} clientId={socket.id} />
       <MessageForm socket={socket} />
     </div>
   );

@@ -2,15 +2,26 @@ import "./App.css";
 import React from "react";
 import moment from "moment";
 
-const MessageBox = ({ messages }) => {
+const MessageBox = ({ messages, clientId }) => {
   return (
     <div className="messagebox">
-      {messages.map(({ text, date, user }) => (
+      {messages.map(({ text, date, user, id }) => (
         <div className="message">
-          <div className="messagedata">
-            {user} {moment(date).format("HH:mm:ss")}
-          </div>
-          <div className="messagetext">{text}</div>
+          {clientId === id ? (
+            <div className="messagedataClient">
+              {user} {moment(date).format("HH:mm:ss")}
+            </div>
+          ) : (
+            <div className="messagedata">
+              {user} {moment(date).format("HH:mm:ss")}
+            </div>
+          )}
+
+          {clientId === id ? (
+            <div className="messagetextClient">{text}</div>
+          ) : (
+            <div className="messagetext">{text}</div>
+          )}
         </div>
       ))}
     </div>

@@ -28,6 +28,10 @@
   grid-area: messagedata;
   justify-self: start;
 }
+.messagedataClient {
+  grid-area: messagedata;
+  justify-self: end;
+}
 
 .messagetext {
   grid-area: messagetext;
@@ -39,6 +43,19 @@
   padding: 10px;
   border-radius: 10px;
   text-align: left;
+}
+
+.messagetextClient {
+  grid-area: messagetext;
+  display: block;
+  width: 300px;
+  min-height: 20px;
+  background-color: rgb(255, 250, 254);
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: right;
+  justify-self: end;
 }
 
 .usernamebox {
