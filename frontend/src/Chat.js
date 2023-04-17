@@ -17,7 +17,6 @@ const Chat = ({ userName }) => {
 
     socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
-      console.log(clientId);
     });
   }, []);
   useEffect(() => {

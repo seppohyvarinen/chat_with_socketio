@@ -36,25 +36,39 @@
 .messagetext {
   grid-area: messagetext;
   display: block;
-  width: 300px;
+  max-width: 300px;
   min-height: 20px;
   background-color: rgb(255, 250, 254);
   overflow-wrap: break-word;
   padding: 10px;
   border-radius: 10px;
   text-align: left;
+  justify-self: start;
+}
+
+.messagetextServer {
+  grid-area: messagetext;
+  display: block;
+  max-width: 300px;
+  min-height: 20px;
+  background-color: rgb(171, 255, 234);
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+  justify-self: start;
 }
 
 .messagetextClient {
   grid-area: messagetext;
   display: block;
-  width: 300px;
+  max-width: 300px;
   min-height: 20px;
   background-color: rgb(255, 250, 254);
   overflow-wrap: break-word;
   padding: 10px;
   border-radius: 10px;
-  text-align: right;
+  text-align: left;
   justify-self: end;
 }
 

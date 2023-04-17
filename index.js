@@ -31,6 +31,7 @@ io.on("connection", (client) => {
       text: "Welcome to the chat " + userName,
       date: new Date().toISOString(),
       user: "Server",
+      id: "server",
     });
 
     const user = {
