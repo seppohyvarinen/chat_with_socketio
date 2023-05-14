@@ -8,16 +8,14 @@ const MessageForm = ({ socket }) => {
     setMessage("");
   };
   return (
-    <form onSubmit={submit}>
-      <label>
-        Send Message
-        <input
-          type="text"
-          onChange={(e) => setMessage(e.currentTarget.value)}
-          value={message}
-        />
-        <button>Start chat</button>
-      </label>
+    <form className="mForm" onSubmit={submit}>
+      <input
+        type="text"
+        placeholder="Type your message here..."
+        onChange={(e) => setMessage(e.currentTarget.value)}
+        value={message}
+      />
+      <button>Send</button>
     </form>
   );
 };
