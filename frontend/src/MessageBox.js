@@ -1,8 +1,17 @@
 import "./App.css";
 import React from "react";
 import moment from "moment";
+import { useRef, useEffect } from "react";
 
 const MessageBox = ({ messages, clientId }) => {
+  const latestMsg = useRef(null);
+
+  const scrollToBottom = () => {
+    latestMsg.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   return (
     <div className="messagebox">
       {messages.map(({ text, date, user, id }) => (
@@ -29,6 +38,7 @@ const MessageBox = ({ messages, clientId }) => {
           )}
         </div>
       ))}
+      <div ref={latestMsg} />
     </div>
   );
 };

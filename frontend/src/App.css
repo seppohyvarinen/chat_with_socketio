@@ -2,9 +2,15 @@
   text-align: center;
   background-image: linear-gradient(0deg, #f9e4f9 0%, #e4fafd 100%);
   height: 100vh;
+  display: grid;
+  grid-template-rows: 80vh 20vh;
+  grid-template-areas:
+    "messagebox"
+    "mform";
 }
 
 .messagebox {
+  grid-area: messagebox;
   background-color: #f3daf3;
   background-image: linear-gradient(0deg, #f3aef3 0%, #50e5f8 100%);
   width: 600px;
@@ -15,6 +21,7 @@
     rgba(0, 0, 0, 0.3) 0px 8px 10px -8px;
   padding: 20px;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 .message {
@@ -82,6 +89,7 @@
   background-color: #f3daf3;
   display: grid;
   place-items: center;
+  place-self: center;
   box-shadow: rgba(223, 5, 183, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 10px -8px;
 }
@@ -116,7 +124,7 @@ select {
 }
 
 .mForm {
-  margin: 20px;
+  grid-area: mform;
 }
 
 .mForm input {
