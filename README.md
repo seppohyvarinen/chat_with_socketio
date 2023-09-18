@@ -8,6 +8,12 @@ Socket.IO library is connected to both frontend and backend. The application was
 As a conclusion, it is highly likely that Socket.IO will be a relevant and used library in the future as well. My thesis can be read here:
 https://www.theseus.fi/handle/10024/796826
 
+# Screenshots
 
+Username selection screen:
+![Demo pic](screenshots/scs1.png)
+
+Chat in action:
+![Demo pic](screenshots/scs2.png)
 
 The app is updated frequently.
