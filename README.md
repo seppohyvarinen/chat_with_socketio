@@ -11,9 +11,11 @@ https://www.theseus.fi/handle/10024/796826
 # Screenshots
 
 Username selection screen:
+
 ![Demo pic](screenshots/scs1.png)
 
 Chat in action:
+
 ![Demo pic](screenshots/scs2.png)
 
 The app is updated frequently.
